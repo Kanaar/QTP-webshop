@@ -61,7 +61,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="353" y="127" name="client">
+<table x="460" y="68" name="customers">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -77,11 +77,15 @@
 <row name="phone" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<row name="id_company" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="company" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="742" y="134" name="order">
+<table x="664" y="72" name="order">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -91,15 +95,18 @@
 <row name="status" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="id_company" null="1" autoincrement="0">
+<row name="created" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<row name="id_client" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="company" row="id" />
+<default>NULL</default><relation table="customers" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="944" y="173" name="order items">
+<table x="892" y="313" name="order items">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -115,7 +122,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="946" y="75" name="invoice">
+<table x="870" y="67" name="invoice">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -123,11 +130,14 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="order" row="id" />
 </row>
+<row name="created" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="532" y="126" name="company">
+<table x="281" y="67" name="company">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -140,13 +150,9 @@
 <row name="VAT number" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="bank reference" null="1" autoincrement="0">
+<row name="bank details" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="id_client" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="client" row="id" />
-</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
