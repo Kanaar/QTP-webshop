@@ -1,38 +1,41 @@
 <div class="container">
   <div class="roll">
     <div class="roll-chapter" id="qtp-about">
-      <h1>Pneumatic transportunits</h1>
-      <h2>The efficient solution for carrying off products, punched parts and dire-cutting waste</h2>
+      <div id="roll-chapter-content">
+        <h1>Pneumatic transportunits</h1>
+        <h2>The efficient solution for carrying off punched parts, products and dire-cutting waste</h2>
+        <div class="svg-wrapper">
+          <%= link_to "#qtp-about-details", :class => "hover-text", "data-toggle" => "modal" do %>
+            <svg height="60" width="320">f
+              <rect class="shape-outline" height="60" width="320" />
+              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Tell me more</text>
+            </svg>
+          <% end %>
+        </div>
 
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Tell me more</button>
+        <!-- Modal -->
+        <div class="modal fade" id="qtp-about-details" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">QTP</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>De Quicky is een snelle krachtige pneumatische transportunit. Hij is speciaal ontwikkeld voor gebruik in combinatie met persen en stansautomaten. Door zijn geringe afmetingen kan deze transportunit op praktische elke machine eenvoudig geïnstalleerd worden. Daardoor kan zelfs bij een geringe beschikbare hoogte de transportgoot tot onder in het gereedschap gemonteerd worden. Van onder uit de machine kan daarom het stansafval of producten makkelijk worden afgevoerd.
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">QTP</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>De Quicky is een snelle krachtige pneumatische transportunit. Hij is speciaal ontwikkeld voor gebruik in combinatie met persen en stansautomaten. Door zijn geringe afmetingen kan deze transportunit op praktische elke machine eenvoudig geïnstalleerd worden. Daardoor kan zelfs bij een geringe beschikbare hoogte de transportgoot tot onder in het gereedschap gemonteerd worden. Van onder uit de machine kan daarom het stansafval of producten makkelijk worden afgevoerd.
-
-                    De Quicky pluspunten:
-                    •    Dure transportbanden zijn voortaan overbodig
-                    •    Geen gevaarlijke uitblaaspijp en onnodig luchtverbruik
-                    •    Ruimte besparend
-                    •    Werkt zelfstandig
-                    •    Verhoogt de productiviteit
-                    •    Zeer geringe inbouwhoogte
-                    •    Lange levensduur t.o.v. een transportband
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+                      De Quicky pluspunten:
+                      •    Dure transportbanden zijn voortaan overbodig
+                      •    Geen gevaarlijke uitblaaspijp en onnodig luchtverbruik
+                      •    Ruimte besparend
+                      •    Werkt zelfstandig
+                      •    Verhoogt de productiviteit
+                      •    Zeer geringe inbouwhoogte
+                      •    Lange levensduur t.o.v. een transportband
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -41,7 +44,7 @@
     <div class="roll-chapter" id="items">
       <div class="cards-container">
         <div class="row">
-        <% @items.each do |item| %>
+          <% @items.each do |item| %>
             <%= render 'shared/item_card', item: item %>
           <% end %>
         </div>

@@ -1,0 +1,44 @@
+/* OUTLINE BUTTON */
+.svg-wrapper {
+  height: 60px;
+  width: 320px;
+  text-align: center;
+  margin: auto;
+}
+
+.shape-outline {
+  fill: transparent !important;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: $blue;
+}
+
+.hover-text {
+  color: black;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  text-decoration: none;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape-outline {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
