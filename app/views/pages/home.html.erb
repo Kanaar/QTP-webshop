@@ -1,20 +1,18 @@
 <div class="container">
-  <div class="roll-container">
+  <div class="roll">
     <div class="roll-chapter" id="qtp-about">
       <h1>Pneumatic transportunits</h1>
       <h2>The efficient solution for carrying off products, punched parts and dire-cutting waste</h2>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        Launch demo modal
-      </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Tell me more</button>
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">QTP</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -42,9 +40,11 @@
     </div>
     <div class="roll-chapter" id="items">
       <div class="cards-container">
+        <div class="row">
         <% @items.each do |item| %>
-          <%= render 'shared/fixture_details', item: item %>
-        <% end %>
+            <%= render 'shared/item_card', item: item %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="roll-chapter" id="services">
