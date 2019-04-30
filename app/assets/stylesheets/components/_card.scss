@@ -1,10 +1,16 @@
 .card {
-  height: 175px;
+  height: 50%;
+  padding-top: 50%; /* 4:3 Aspect Ratio */
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .card-user {
   position: absolute;
