@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+#myVideo {
+  position: absolute;
+  margin-bottom: 16px;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
