@@ -9,29 +9,78 @@
 
     <a href="" class="navbar-wagon-item navbar-wagon-link">Product</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Models</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Services</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Company</a>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
+        <i class="fas fa-bars" data-toggle="dropdown" role="button"></i>
+        <% if customer_signed_in? %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Order history</a></li>
+            <li><a href="#">Invoice history</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        <% else %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#" data-toggle="modal" data-target="#SignInModal">Sign in</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#RegisterModal">Register</a></li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Host</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Messagese</a></li>
-      </ul>
+  <!-- Sign in customer modal -->
+  <div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content home-modal">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(:customer, url: session_path(:customer)) do |f| %>
+            <%= f.input :email, input_html: { autocomplete: 'email' } %>
+            <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
+            <%= f.input :remember_me, as: :boolean, label: "Remember me", inline_label: true if Devise.mappings[:customer] %>
+            <%= link_to "Forgot your password?", "#", id: "flip1" %>
+        </div>
+        <div class="modal-footer">
+            <%= f.button :button, "Cancel", class: "btn btn-secondary" %>
+            <%= f.button :submit, "Sign In", class: "btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register new customer modal -->
+  <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content home-modal">
+        <div class="modal-header">
+          <h5 class="modal-title">Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(:customer, url: customer_registration_path(:customer)) do |f| %>
+            <%= f.input :email, input_html: { autocomplete: 'email' } %>
+            <%= f.input :password %>
+            <%= f.input :password_confirmation %>
+        </div>
+        <div class="modal-footer">
+            <%= f.button :button, "Cancel", class: "btn btn-secondary" %>
+            <%= f.button :submit, "Register", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
