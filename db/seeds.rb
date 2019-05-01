@@ -22,14 +22,14 @@ Item.create(
   price: 342,
   )
 
-items = Item.create(
+Item.create(
   model: 'QTP 48',
   specs: "super super good",
   image_url: 'qtp-48.jpg',
   price: 342,
   )
 
-items = Item.create(
+Item.create(
   model: 'QTP 100',
   specs: "super super good",
   image_url: 'qtp-100.jpg',
@@ -37,3 +37,37 @@ items = Item.create(
   )
 
 p "4 items created, #{Item.count} items in database"
+p "creating one customer account with a company"
+
+@company = Company.create(
+  name: "Setubal Automobil",
+  corr_address: {
+    street: "Plaza major",
+    number: "23",
+    city: "Setubal",
+    state: "Setubal",
+    country: "Portugal"
+    },
+  vat_number: "24643PT23STBL",
+  bank_details: {
+    IBAN: "",
+    BIC: "",
+    name: "Setubal Automobil"
+    }
+  )
+
+Customer.create(
+  name: "Joao Fernando",
+  address: {
+    street: "Plaza major",
+    number: "23",
+    city: "Setubal",
+    state: "Setubal",
+    country: "Portugal"
+    },
+  phone: "+3528367292",
+  email: "joao@setubalauto.com",
+  company: @company,
+  password: "testpassword"
+
+  )
