@@ -1,89 +1,98 @@
-<div class="container">
-  <div class="roll">
-    <div class="roll-chapter center-pos" id="product">
-      <video autoplay muted loop id="myVideo">
-        <source src="https://media.giphy.com/media/ldlmPm3v2woeY/giphy.mp4" type="video/mp4">
-      </video>
-        <div id="roll-chapter-content">
-          <h1>Pneumatic transportunits</h1>
-          <h2>The efficient solution for carrying off punched parts, products and dire-cutting waste</h2>
-          <div class="svg-wrapper">
-            <%= link_to "#qtp-about-details", :class => "hover-text", "data-toggle" => "modal" do %>
-              <svg height="60" width="320">f
-                <rect class="shape-outline" height="60" width="320" />
-                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Tell me more</text>
-              </svg>
-            <% end %>
-          </div>
+<div class="container-fluid">
+  <div class="row chapter center-pos" id="product">
+    <video autoplay muted loop id="landingVideo">
+      <source src="https://media.giphy.com/media/ldlmPm3v2woeY/giphy.mp4" type="video/mp4">
+    </video>
+    <div class="col-xs-12">
+      <div class="content">
+        <h1>Pneumatic transportunits</h1>
+        <h2>The efficient solution for carrying off punched parts, products and dire-cutting waste</h2>
+        <div class="svg-wrapper">
+          <%= link_to "#qtp-about-details", :class => "hover-text", "data-toggle" => "modal" do %>
+          <svg height="60" width="320">f
+            <rect class="shape-outline" height="60" width="320" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Tell me more</text>
+          </svg>
+          <% end %>
         </div>
+      </div>
+      <!-- QTP details modal -->
+      <div class="modal fade" id="qtp-about-details" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">QTP</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>De Quicky is een snelle krachtige pneumatische transportunit. Hij is speciaal ontwikkeld voor gebruik in combinatie met persen en stansautomaten. Door zijn geringe afmetingen kan deze transportunit op praktische elke machine eenvoudig geïnstalleerd worden. Daardoor kan zelfs bij een geringe beschikbare hoogte de transportgoot tot onder in het gereedschap gemonteerd worden. Van onder uit de machine kan daarom het stansafval of producten makkelijk worden afgevoerd.
 
-        <!-- QTP details modal -->
-        <div class="modal fade" id="qtp-about-details" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">QTP</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>De Quicky is een snelle krachtige pneumatische transportunit. Hij is speciaal ontwikkeld voor gebruik in combinatie met persen en stansautomaten. Door zijn geringe afmetingen kan deze transportunit op praktische elke machine eenvoudig geïnstalleerd worden. Daardoor kan zelfs bij een geringe beschikbare hoogte de transportgoot tot onder in het gereedschap gemonteerd worden. Van onder uit de machine kan daarom het stansafval of producten makkelijk worden afgevoerd.
-
-                      De Quicky pluspunten:
-                      •    Dure transportbanden zijn voortaan overbodig
-                      •    Geen gevaarlijke uitblaaspijp en onnodig luchtverbruik
-                      •    Ruimte besparend
-                      •    Werkt zelfstandig
-                      •    Verhoogt de productiviteit
-                      •    Zeer geringe inbouwhoogte
-                      •    Lange levensduur t.o.v. een transportband
-                </p>
-              </div>
+                De Quicky pluspunten:
+                •    Dure transportbanden zijn voortaan overbodig
+                •    Geen gevaarlijke uitblaaspijp en onnodig luchtverbruik
+                •    Ruimte besparend
+                •    Werkt zelfstandig
+                •    Verhoogt de productiviteit
+                •    Zeer geringe inbouwhoogte
+                •    Lange levensduur t.o.v. een transportband
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="roll-chapter" id="items">
-      <div class="cards-container">
-        <div class="row">
-          <% @items.each do |item| %>
+  </div>
+  <div class="row chapter header-pos" id="items">
+    <div class="col-xs-12">
+      <div class="content">
+        <h1>Models</h1>
+        <div class="cards-container">
+          <div class="row">
+            <% @items.each do |item| %>
             <%= render 'shared/item_card', item: item %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-    <div class="roll-chapter header-pos" id="services">
-      <div id="roll-chapter-content">
-        <h1>Services</h1>
+  </div>
+  <div class="row chapter header-pos" id="services">
+    <div class="col-xs-12">
+      <div class="content">
+        <h1>Our Services</h1>
       </div>
     </div>
-
-    <div class="roll-chapter header-pos" id="company">
-      <div id="roll-chapter-content">
+  </div>
+  <div class="row chapter header-pos" id="company">
+    <div class="col-xs-12">
+      <div class="content">
         <h1>Company</h1>
         <p>Bedrijfsprofiel
-ITB is sinds 1979 gespecialiseerd in het leveren van persen en persautomatiserings- systemen aan de industrie. Met onze machines worden onderdelen geproduceerd voor uiteenlopende industrieën, waaronder de automotive- en elektronische industrie. Ook voor de productie van onderdelen voor de bouwsector, de kunststof- en witgoedindustrie, wordt veelvuldig gebruik gemaakt van onze systemen. Ons klantenbestand is zeer divers, evenals ons producten- en dienstenpakket.
+          ITB is sinds 1979 gespecialiseerd in het leveren van persen en persautomatiserings- systemen aan de industrie. Met onze machines worden onderdelen geproduceerd voor uiteenlopende industrieën, waaronder de automotive- en elektronische industrie. Ook voor de productie van onderdelen voor de bouwsector, de kunststof- en witgoedindustrie, wordt veelvuldig gebruik gemaakt van onze systemen. Ons klantenbestand is zeer divers, evenals ons producten- en dienstenpakket.
 
-Maatwerk/productie
-ITB werkt samen met een aantal gerenommeerde leveranciers die zijn geselecteerd op kwaliteit, service en leveringsbetrouwbaarheid. Ook beschikken we met onze Duitse dochteronderneming AMT Anlagen und Maschinen Technik GmbH over een eigen productievestiging waar de machines met behulp van moderne 3D-CAD-systemen (Autodesk Inventor) worden ontwikkeld. Hier worden o.a. haspels, richtmachines, aanvoersystemen, assen en speciaalmachines geconstrueerd en gefabriceerd. ITB biedt voor elk productieproces een klantgerichte oplossing.
+          Maatwerk/productie
+          ITB werkt samen met een aantal gerenommeerde leveranciers die zijn geselecteerd op kwaliteit, service en leveringsbetrouwbaarheid. Ook beschikken we met onze Duitse dochteronderneming AMT Anlagen und Maschinen Technik GmbH over een eigen productievestiging waar de machines met behulp van moderne 3D-CAD-systemen (Autodesk Inventor) worden ontwikkeld. Hier worden o.a. haspels, richtmachines, aanvoersystemen, assen en speciaalmachines geconstrueerd en gefabriceerd. ITB biedt voor elk productieproces een klantgerichte oplossing.
 
-Continuïteit
-Uw planning hangt samen met de betrouwbaarheid van uw machines. ITB biedt u bedrijfszekere oplossingen want ondanks de enorme diversiteit van ons klantenbestand hebben al onze afnemers eenzelfde eis: continuïteit in het productieproces.</p>
+          Continuïteit
+        Uw planning hangt samen met de betrouwbaarheid van uw machines. ITB biedt u bedrijfszekere oplossingen want ondanks de enorme diversiteit van ons klantenbestand hebben al onze afnemers eenzelfde eis: continuïteit in het productieproces.</p>
       </div>
     </div>
-    <div class="roll-chapter header-pos" id="contact">
-      <div id="roll-chapter-content">
+  </div>
+  <div class="row chapter header-pos" id="contact">
+    <div class="col-xs-12">
+      <div class="content">
         <h1>Contact</h1>
         <p>ITB Benelux BV
-Industrieterrein Statendam Zuid
-Fazantstraat 23
-4901 AZ Oosterhout
+          Industrieterrein Statendam Zuid
+          Fazantstraat 23
+          4901 AZ Oosterhout
 
-Postbus 348
-4900 AH Oosterhout</p>
+          Postbus 348
+        4900 AH Oosterhout</p>
       </div>
     </div>
   </div>
 </div>
+
