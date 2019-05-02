@@ -1,0 +1,39 @@
+.container-fluid{
+  padding: 0 !important;
+}
+
+.chapter{
+  height: 100vh;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.content{
+
+}
+
+.center-pos{
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header-pos{
+  text-align: center;
+  align-items: center;
+}
+
+.roll h2{
+  font-size: 24px;
+}
+
+#product{
+  color: white;
+}
+
+#services{
+  background: url('services.jpg') no-repeat;
+  background-size: cover !important;
+  // position: absolute;
+}
